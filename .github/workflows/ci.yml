@@ -37,7 +37,7 @@ jobs:
           bundler-cache: true
 
       - name: Run setup
-        run: bundle exec rake setup
+        run: bin/setup
 
       - name: Run type check for all gems
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
