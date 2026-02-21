@@ -49,14 +49,6 @@ bin/steep_check
 bin/steep_check <gem名>
 ```
 
-## 例: colorize
-
-`gems/colorize/` に colorize gem の型定義テストが含まれています。
-
-- `gems/colorize/_test/sample.rb` — colorize を使用したサンプルコード（rbs-inline アノテーション付き）
-- `gems/colorize/sig/colorize.rbs` — colorize gem の型定義
-- `gems/colorize/sig/generated/_test/sample.rbs` — rbs-inline で生成された型定義
-
 ## 例: rubyXL
 
 `gems/rubyXL/` に rubyXL gem (3.4.27) の型定義テストが含まれています。
