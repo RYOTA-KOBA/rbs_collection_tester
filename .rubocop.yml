@@ -3,6 +3,9 @@ AllCops:
   TargetRubyVersion: 3.2
   SuggestExtensions: false
 
+plugins:
+  - rubocop-rbs_inline
+
 # rbs-inline uses '#:' for type annotations which conflicts with this cop
 Layout/LeadingCommentSpace:
   Enabled: false
