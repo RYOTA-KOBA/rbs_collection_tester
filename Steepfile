@@ -1,8 +1,9 @@
-D = Steep::Diagnostic
+target :colorize do
+  check "gems/colorize/_test"
+  signature "gems/colorize/sig"
+end
 
-target :lib do
-  signature "sig"
-  signature "sig/generated"
-
-  check "lib"
+target :rubyXL do
+  check "gems/rubyXL/_test"
+  signature "gems/rubyXL/sig"
 end
