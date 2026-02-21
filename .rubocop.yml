@@ -1,0 +1,27 @@
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.2
+  SuggestExtensions: false
+
+# rbs-inline uses '#:' for type annotations which conflicts with this cop
+Layout/LeadingCommentSpace:
+  Enabled: false
+
+# Use 2-space consistent indentation instead of aligning to opening parenthesis
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+# Variables in _test files are intentionally assigned to demonstrate type usage for steep
+Lint/UselessAssignment:
+  Exclude:
+    - 'gems/**/_test/**/*.rb'
+
+# Sample files are usage examples, not library code requiring documentation
+Style/Documentation:
+  Exclude:
+    - 'gems/**/_test/**/*.rb'
+
+# rescue modifier is acceptable in sample files for conciseness
+Style/RescueModifier:
+  Exclude:
+    - 'gems/**/_test/**/*.rb'
