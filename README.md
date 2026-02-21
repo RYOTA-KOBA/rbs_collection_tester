@@ -46,6 +46,14 @@ bundle exec steep check
 - `gems/colorize/sig/colorize.rbs` — colorize gem の型定義
 - `gems/colorize/sig/generated/_test/sample.rbs` — rbs-inline で生成された型定義
 
+## 例: rubyXL
+
+`gems/rubyXL/` に rubyXL gem (3.4.27) の型定義テストが含まれています。
+
+- `gems/rubyXL/_test/sample.rb` — rubyXL を使用したサンプルコード（rbs-inline アノテーション付き）
+- `gems/rubyXL/sig/rubyXL.rbs` — rubyXL gem の型定義
+- `gems/rubyXL/sig/generated/_test/sample.rbs` — rbs-inline で生成された型定義
+
 ## 新しい gem を追加する手順
 
 1. `gems/<gem名>/` ディレクトリを作成する

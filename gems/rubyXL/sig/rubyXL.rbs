@@ -1,0 +1,22 @@
+module RubyXL
+  class Workbook
+    def initialize: () -> void
+    def []: (Integer index) -> Worksheet?
+    def add_worksheet: (String name) -> Worksheet
+    def write: (String path) -> void
+  end
+
+  class Worksheet
+    def []: (Integer index) -> Array[Cell?]?
+    def add_cell: (Integer row, Integer col, String | Integer | Float | nil value) -> Cell
+  end
+
+  class Cell
+    def value: () -> (String | Integer | Float | nil)
+    def change_contents: (String | Integer | Float | nil value, ?untyped formula) -> void
+  end
+
+  class Parser
+    def self.parse: (String path) -> Workbook
+  end
+end
