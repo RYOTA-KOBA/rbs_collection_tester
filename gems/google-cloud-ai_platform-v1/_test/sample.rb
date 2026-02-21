@@ -1,18 +1,20 @@
-require "google/cloud/ai_platform/v1"
+# frozen_string_literal: true
+
+require 'google/cloud/ai_platform/v1'
 
 # PredictionService::Client
 client = Google::Cloud::AIPlatform::V1::PredictionService::Client.new
 
 # with block
 client2 = Google::Cloud::AIPlatform::V1::PredictionService::Client.new do |config|
-  config.endpoint = "aiplatform.googleapis.com"
+  config.endpoint = 'aiplatform.googleapis.com'
   config.timeout = 30.0
 end
 
 # generate_content with Hash
 response = client.generate_content({
-  model: "projects/my-project/locations/us-central1/publishers/google/models/gemini-pro",
-  contents: [{ role: "USER", parts: [{ text: "Hello" }] }],
+  model: 'projects/my-project/locations/us-central1/publishers/google/models/gemini-pro',
+  contents: [{ role: 'USER', parts: [{ text: 'Hello' }] }],
   generation_config: { temperature: 0.7, max_output_tokens: 1024 }
 })
 
@@ -34,7 +36,5 @@ if candidate
 
   # Part
   part = parts.first
-  if part
-    text = part.text
-  end
+  text = part.text if part
 end

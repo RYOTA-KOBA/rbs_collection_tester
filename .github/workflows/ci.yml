@@ -7,6 +7,21 @@ on:
   pull_request:
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ruby
+          bundler-cache: true
+
+      - name: Run RuboCop
+        run: bundle exec rake rubocop
+
   type-check:
     runs-on: ubuntu-latest
     permissions:

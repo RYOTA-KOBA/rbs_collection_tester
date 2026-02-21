@@ -1,7 +1,8 @@
+# frozen_string_literal: true
 # rbs_inline: enabled
 
-require "rubyXL"
-require "rubyXL/convenience_methods"
+require 'rubyXL'
+require 'rubyXL/convenience_methods'
 
 class WorkbookSample
   #: () -> RubyXL::Workbook
@@ -32,7 +33,7 @@ workbook = RubyXL::Workbook.new
 worksheets = workbook.worksheets
 
 # add_worksheet (with name)
-ws1 = workbook.add_worksheet("Sheet1")
+ws1 = workbook.add_worksheet('Sheet1')
 
 # add_worksheet (without name)
 ws2 = workbook.add_worksheet
@@ -41,7 +42,7 @@ ws2 = workbook.add_worksheet
 ws_by_index = workbook[0]
 
 # [] with String
-ws_by_name = workbook["Sheet1"]
+ws_by_name = workbook['Sheet1']
 
 # stream -> StringIO
 io = workbook.stream
@@ -52,7 +53,7 @@ _binary = io.read
 name = ws1.sheet_name
 
 # sheet_name=
-ws1.sheet_name = "Renamed"
+ws1.sheet_name = 'Renamed'
 
 # sheet_data -> SheetData
 sheet_data = ws1.sheet_data
@@ -67,10 +68,10 @@ sheet_data_size = sheet_data.size
 row = sheet_data[0]
 
 # add_cell
-cell = ws1.add_cell(0, 0, "Hello")
+cell = ws1.add_cell(0, 0, 'Hello')
 
 # add_cell with formula
-ws1.add_cell(1, 0, nil, "SUM(A1:A1)")
+ws1.add_cell(1, 0, nil, 'SUM(A1:A1)')
 
 # change_row_height
 ws1.change_row_height(0, 20)
@@ -89,13 +90,13 @@ if row
 end
 
 # Cell
-cell2 = ws1.add_cell(0, 1, "World")
+cell2 = ws1.add_cell(0, 1, 'World')
 
 # value
 val = cell2.value
 
 # change_fill
-cell2.change_fill("FF0000")
+cell2.change_fill('FF0000')
 
 # change_font_bold
 cell2.change_font_bold(true)
@@ -104,10 +105,10 @@ cell2.change_font_bold(true)
 cell2.change_text_wrap(true)
 
 # change_vertical_alignment
-cell2.change_vertical_alignment("center")
+cell2.change_vertical_alignment('center')
 
 # RubyXL::Parser
-parsed_wb = RubyXL::Parser.parse("/dev/null") rescue nil
+parsed_wb = RubyXL::Parser.parse(File::NULL) rescue nil
 
 # parse_buffer
-parsed_from_buffer = RubyXL::Parser.parse_buffer("") rescue nil
+parsed_from_buffer = RubyXL::Parser.parse_buffer('') rescue nil
