@@ -6,32 +6,21 @@ class WorkbookManager
 
   def initialize: () -> void
 
-  # @rbs path: String
-  # @rbs return: RubyXL::Workbook
+  # : (String path) -> RubyXL::Workbook
   def self.open: (String path) -> RubyXL::Workbook
 
-  # @rbs sheet_name: String
-  # @rbs return: RubyXL::Worksheet
+  # : (String sheet_name) -> RubyXL::Worksheet
   def add_sheet: (String sheet_name) -> RubyXL::Worksheet
 
-  # @rbs index: Integer
-  # @rbs return: RubyXL::Worksheet?
+  # : (Integer index) -> RubyXL::Worksheet?
   def sheet: (Integer index) -> RubyXL::Worksheet?
 
-  # @rbs worksheet: RubyXL::Worksheet
-  # @rbs row: Integer
-  # @rbs col: Integer
-  # @rbs value: String | Integer | Float | nil
-  # @rbs return: RubyXL::Cell
+  # : (RubyXL::Worksheet worksheet, Integer row, Integer col, String | Integer | Float | nil value) -> RubyXL::Cell
   def write_cell: (RubyXL::Worksheet worksheet, Integer row, Integer col, String | Integer | Float | nil value) -> RubyXL::Cell
 
-  # @rbs worksheet: RubyXL::Worksheet
-  # @rbs row: Integer
-  # @rbs col: Integer
-  # @rbs return: RubyXL::Cell?
+  # : (RubyXL::Worksheet worksheet, Integer row, Integer col) -> RubyXL::Cell?
   def read_cell: (RubyXL::Worksheet worksheet, Integer row, Integer col) -> RubyXL::Cell?
 
-  # @rbs path: String
-  # @rbs return: void
+  # : (String path) -> void
   def save: (String path) -> void
 end

@@ -13,44 +13,33 @@ class WorkbookManager
     @workbook = RubyXL::Workbook.new
   end
 
-  # @rbs path: String
-  # @rbs return: RubyXL::Workbook
-  def self.open(path) #: RubyXL::Workbook
+  #: (String path) -> RubyXL::Workbook
+  def self.open(path)
     RubyXL::Parser.parse(path)
   end
 
-  # @rbs sheet_name: String
-  # @rbs return: RubyXL::Worksheet
-  def add_sheet(sheet_name) #: RubyXL::Worksheet
+  #: (String sheet_name) -> RubyXL::Worksheet
+  def add_sheet(sheet_name)
     @workbook.add_worksheet(sheet_name)
   end
 
-  # @rbs index: Integer
-  # @rbs return: RubyXL::Worksheet?
-  def sheet(index) #: RubyXL::Worksheet?
+  #: (Integer index) -> RubyXL::Worksheet?
+  def sheet(index)
     @workbook[index]
   end
 
-  # @rbs worksheet: RubyXL::Worksheet
-  # @rbs row: Integer
-  # @rbs col: Integer
-  # @rbs value: String | Integer | Float | nil
-  # @rbs return: RubyXL::Cell
-  def write_cell(worksheet, row, col, value) #: RubyXL::Cell
+  #: (RubyXL::Worksheet worksheet, Integer row, Integer col, String | Integer | Float | nil value) -> RubyXL::Cell
+  def write_cell(worksheet, row, col, value)
     worksheet.add_cell(row, col, value)
   end
 
-  # @rbs worksheet: RubyXL::Worksheet
-  # @rbs row: Integer
-  # @rbs col: Integer
-  # @rbs return: RubyXL::Cell?
-  def read_cell(worksheet, row, col) #: RubyXL::Cell?
+  #: (RubyXL::Worksheet worksheet, Integer row, Integer col) -> RubyXL::Cell?
+  def read_cell(worksheet, row, col)
     worksheet[row]&.[](col)
   end
 
-  # @rbs path: String
-  # @rbs return: void
-  def save(path) #: void
+  #: (String path) -> void
+  def save(path)
     @workbook.write(path)
   end
 end
