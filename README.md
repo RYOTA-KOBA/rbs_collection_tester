@@ -1,4 +1,4 @@
-# rbs_collection_tester
+# rbs_collection_sandbox
 
 このリポジトリは [gem_rbs_collection](https://github.com/ruby/gem_rbs_collection) に型定義を提出する前にローカルで動作確認するためのリポジトリです。
 
