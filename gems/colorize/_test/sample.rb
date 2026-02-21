@@ -3,12 +3,12 @@
 require "colorize"
 
 class ColorizeSample
-  # @rbs (::String) -> ::String
+  #: (String) -> String
   def colorized_hello(name)
     "Hello, #{name}!".colorize(:green)
   end
 
-  # @rbs (::Integer, ::Integer) -> ::String
+  #: (Integer, Integer) -> String
   def colorized_sum(a, b)
     "#{a} + #{b} = #{a + b}".colorize(:blue)
   end
