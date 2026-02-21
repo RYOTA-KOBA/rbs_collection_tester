@@ -6,11 +6,6 @@ def gem_names
   Dir.glob("#{GEMS_DIR}/*/").map { |d| File.basename(d) }.sort
 end
 
-desc 'Run bundle install'
-task :setup do
-  sh 'bin/setup'
-end
-
 desc 'Run RuboCop lint'
 task :rubocop do
   sh 'bundle exec rubocop'

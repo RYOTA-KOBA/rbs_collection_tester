@@ -21,9 +21,7 @@ gems/
 ### 1. セットアップ
 
 ```bash
-bundle install
-# または
-bundle exec rake setup
+bin/setup
 ```
 
 ### 2. RBS 生成と型検査を一括実行する（Rake）
@@ -36,7 +34,7 @@ bundle exec rake
 bundle exec rake check[<gem名>]
 ```
 
-### 手動で実行する場合
+### 3. 手動で実行する場合（bin スクリプト）
 
 ```bash
 # RBS の生成（特定の gem）
