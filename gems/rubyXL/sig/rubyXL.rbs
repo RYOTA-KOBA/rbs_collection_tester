@@ -25,9 +25,9 @@ module RubyXL
     def sheet_data: () -> SheetData
     def []: (Integer row) -> Row?
     def add_cell: (Integer row_index, Integer column_index, ?untyped data, ?::String? formula, ?bool overwrite) -> Cell
-    def change_row_height: (Integer row, ::Numeric height) -> void
-    def change_row_font_size: (Integer row, ::Numeric font_size) -> void
-    def change_column_width: (Integer column_index, ::Numeric width_in_chars) -> void
+    def change_row_height: (?Integer row, ?::Numeric height) -> void
+    def change_row_font_size: (?Integer row, ?::Numeric font_size) -> void
+    def change_column_width: (Integer column_index, ?::Numeric width_in_chars) -> void
   end
 
   class Workbook
